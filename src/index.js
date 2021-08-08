@@ -5,6 +5,7 @@ import firebase from 'firebase'
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 import App from './App';
 
+
 firebase.initializeApp({
     apiKey: "AIzaSyCQSiGwuwvYANheJuTUXS3uPg16r7LAzCs",
     authDomain: "fir-auth-24449.firebaseapp.com",

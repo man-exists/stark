@@ -13,11 +13,12 @@
     "framer-motion": "^4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-firebase-hooks": "^3.0.4",
     "react-icons": "^4.2.0",
     "react-scripts": "4.0.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "BROWSER=google-chrome-stable react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
