@@ -1,5 +1,6 @@
-import { IconButton, Tooltip } from '@chakra-ui/react'
 import React from 'react'
+
+import { IconButton, Tooltip } from '@chakra-ui/react'
 
 function TopIcon(props) {
     return (
@@ -7,7 +8,6 @@ function TopIcon(props) {
             <IconButton
             icon={ props.icon }
             isRound
-            alignSelf='flex-end'
             size='lg'
             onClick={ props.onClick } />
         </Tooltip>
