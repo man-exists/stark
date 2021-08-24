@@ -32,7 +32,7 @@ function Home() {
                 title: "Loading image",
                 isClosable: true
             })
-            window.location = `https://europe-word-image-server.glutenmorgen.repl.co/${word}`
+            window.location = `https://europe-word-image-server.glutenmorgen.repl.co/?word=${word}`
         }
 
         setCooldown(true)
