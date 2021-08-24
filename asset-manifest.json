@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/stark/static/js/main.5a3228d8.chunk.js",
+    "main.js": "/stark/static/js/main.7edf8ed6.chunk.js",
     "runtime-main.js": "/stark/static/js/runtime-main.82b78df4.js",
     "static/js/2.93f2c9bf.chunk.js": "/stark/static/js/2.93f2c9bf.chunk.js",
     "index.html": "/stark/index.html",
@@ -9,6 +9,6 @@
   "entrypoints": [
     "static/js/runtime-main.82b78df4.js",
     "static/js/2.93f2c9bf.chunk.js",
-    "static/js/main.5a3228d8.chunk.js"
+    "static/js/main.7edf8ed6.chunk.js"
   ]
 }
