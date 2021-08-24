@@ -5,7 +5,6 @@ import Home from './pages/Home'
 import { HashRouter, Switch, Route } from 'react-router-dom'
 
 function App() {
-
     return (
         <HashRouter>
             <VStack
@@ -14,7 +13,7 @@ function App() {
                 p='4'
                 alignItems='stretch' >
                 <HStack>
-                    <Text fontSize='4xl' fontFamily="'Suez One', serif">סטארק</Text>
+                    <Text fontSize='4xl' fontFamily="'Suez One', serif">Word Mapper</Text>
                     <Spacer />
                     <TopButtons />
                 </HStack>
