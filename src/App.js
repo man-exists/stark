@@ -13,7 +13,7 @@ function App() {
                 p='4'
                 alignItems='stretch' >
                 <HStack>
-                    <Text fontSize='4xl' fontFamily="'Suez One', serif">Word Mapper</Text>
+                    <Text fontSize='3xl' fontFamily="'Suez One', serif">Word Mapper</Text>
                     <Spacer />
                     <TopButtons />
                 </HStack>
