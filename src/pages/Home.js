@@ -1,54 +1,47 @@
-import { Button, Center, FormControl, FormErrorMessage, FormLabel, Img, Input, VStack } from '@chakra-ui/react'
-import { Field, Form, Formik } from 'formik'
-import React from 'react'
+import { Button, HStack, Input, Text, useToast, VStack } from '@chakra-ui/react'
+import { FormControl } from '@material-ui/core'
+import React, { useState } from 'react'
 
 function Home() {
-    function validateName(value) {
-        let error
-        if (value.split(' ').length > 1) {
-            error = "Only 1 Word Allowed"
-        }
-        return error
+
+    const [word, setWord] = useState("")
+    const toast = useToast()
+
+
+    const changeIt = e => {
+        setWord(e.target.value)
     }
+
+    const sendIt = e => {
+        toast({
+            duration: 4000,
+            description: "This will take a while",
+            status: "info",
+            title: "Loading image",
+            isClosable: true
+        })
+        window.location = `https://europe-word-image-server.glutenmorgen.repl.co/${word}` 
+    }
+
     return (
-        <VStack p="3">
-            <Formik
-                initialValues={{ name: "Hello" }}
-                onSubmit={(values, actions) => {
-                    setTimeout(() => {
-                        window.location = `https://europe-word-image-server.glutenmorgen.repl.co/${values.name}`
-                    }, 1000)
-                }}
+        <FormControl>
+            <VStack
+                p='4'
+                alignItems='center'
+                justifyContent='center'
+                direction='column'
+                maxW={{ base: '90vw', sm: '80vw', lg: '50vw', xl: '30vw' }}
             >
-                {(props) => (
-                    <Center>
-                        <Form>
-                            <Field name="name" validate={validateName}>
-                                {({ field, form }) => (
-                                    <FormControl isInvalid={form.errors.name && form.touched.name}>
-                                        <FormLabel htmlFor="word">
-                                            Please Input a word and we will generate a map of europe
-                                            that shows the translation of your word in each country on the europe map
-                                        </FormLabel>
-                                        <Input {...field} id="word" placeholder="Word" />
-                                        <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                                    </FormControl>
-                                )}
-                            </Field>
-                            <Button
-                                w="100%"
-                                mt={4}
-                                colorScheme="teal"
-                                isLoading={props.isSubmitting}
-                                type="submit"
-                            >
-                                Submit
-                            </Button>
-                        </Form>
-                    </Center>
-                )}
-            </Formik>
-        </VStack>
+                <Text>
+                    Please Input a word and we will generate a map of europe that shows
+                    the translation of your word in each country on the europe map
+                </Text>
+                <HStack w="100%" >
+                    <Input colorScheme="gray" variant="filled" placeholder="Word Here" onChange={changeIt} />
+                    <Button colorScheme="pink" onClick={sendIt}>Submit</Button>
+                </HStack>
+            </VStack>
+        </FormControl>
     )
 }
 
