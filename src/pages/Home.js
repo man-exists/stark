@@ -18,7 +18,7 @@ function Home() {
         if (cooldown) {
             toast({
                 duration: 3000,
-                description: "Fuck off spamming retard",
+                description: "stop spamming",
                 status: "error",
                 title: "You are on cooldown",
                 isClosable: false
