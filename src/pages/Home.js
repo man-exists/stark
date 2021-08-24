@@ -5,6 +5,8 @@ import React, { useState } from 'react'
 function Home() {
 
     const [word, setWord] = useState("")
+    const [cooldown, setCooldown] = useState(false)
+
     const toast = useToast()
 
 
@@ -13,14 +15,28 @@ function Home() {
     }
 
     const sendIt = e => {
-        toast({
-            duration: 4000,
-            description: "This will take a while",
-            status: "info",
-            title: "Loading image",
-            isClosable: true
-        })
-        window.location = `https://europe-word-image-server.glutenmorgen.repl.co/${word}` 
+        if (cooldown) {
+            toast({
+                duration: 3000,
+                description: "Fuck off spamming retard",
+                status: "error",
+                title: "You are on cooldown",
+                isClosable: false
+            })
+            return
+        } else {
+            toast({
+                duration: 4000,
+                description: "This will take a while",
+                status: "info",
+                title: "Loading image",
+                isClosable: true
+            })
+            window.location = `https://europe-word-image-server.glutenmorgen.repl.co/${word}`
+        }
+
+        setCooldown(true)
+        setTimeout(() => setCooldown(false), 4000)
     }
 
     return (
